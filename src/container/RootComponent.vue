@@ -25,7 +25,8 @@
         <h4>Quick Search</h4>
     </b-row>
     <b-row>
-      <the-quick-search-filters/>
+      <h1 v-if="loading">Loading....</h1>
+      <the-quick-search-filters v-if="!loading"/>
     </b-row>
   </b-container>
 </template>
@@ -82,6 +83,8 @@ export default {
       });
     },
     fetchFoods() {
+      this.$data.loading = true;
+
       axiosInstance
         .get(GET_FOOD)
         .then((response) => {
