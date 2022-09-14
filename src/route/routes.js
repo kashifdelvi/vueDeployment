@@ -6,18 +6,18 @@ import RestuarantListContainer from "../components/RestuarantListContainer";
 
 const routes = [
     {
-        path:'/',
+        path:'/vueDeployment',
         name:'landing',
         components:{ default: RootComponent}
     },
     {
-        path:'/food',
+        path:'/vueDeployment/food',
         name:'food',
         component:FoodComponent
     },
-    {path:'/resturants/:timingCode',name:'resturants',component:RestuarantListContainer, props: true},
-    {path:'/resturant/:code',name:'foodDetails',component:RestuarantDetail, props: true},
-    {path:'/:catchAll(.*)',component:<h1>Not a valid link</h1> }
+    {path:'/vueDeployment/resturants/:timingCode',name:'resturants',component:RestuarantListContainer, props: true},
+    {path:'/vueDeployment/resturant/:code',name:'foodDetails',component:RestuarantDetail, props: true},
+    {path:'/vueDeployment/:catchAll(.*)',component:<h1>Not a valid link</h1> }
 
 ]
 
