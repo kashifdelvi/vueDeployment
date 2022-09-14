@@ -1,0 +1,9 @@
+<template>
+    <ul>
+        <li>Idly</li>
+        <li>Idly</li>
+        <li>Idly</li>
+        <li>Idly</li>
+        <li>Idly</li>
+    </ul>
+</template>
