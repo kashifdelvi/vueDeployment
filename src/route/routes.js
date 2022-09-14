@@ -17,7 +17,7 @@ const routes = [
     },
     {path:'/vueDeployment/resturants/:timingCode',name:'resturants',component:RestuarantListContainer, props: true},
     {path:'/vueDeployment/resturant/:code',name:'foodDetails',component:RestuarantDetail, props: true},
-    {path:'/vueDeployment/:catchAll(.*)',component:<h1>Not a valid link</h1> }
+    {path:'/:catchAll(.*)',component:<h1>Not a valid link</h1> }
 
 ]
 
