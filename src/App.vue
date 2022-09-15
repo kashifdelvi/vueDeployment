@@ -11,7 +11,6 @@
       'navigation-comp':NavigationComp
     },
     mounted(){
-      console.log("abc")
       console.log(process.env.NODE_ENV)
     },
     name: "App",

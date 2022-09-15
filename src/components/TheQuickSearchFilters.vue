@@ -25,7 +25,7 @@
 <script>
 import { axiosInstance } from "./../api/axios";
 import { GET_QUICK_SEARCH_FILTERS } from "./../api/endpoints";
-
+import {quickSearchFiltersmock} from "../mocks/index.js"
 export default {
   data() {
     return {
@@ -36,6 +36,8 @@ export default {
     fetchQuickSearchFilters() {
       axiosInstance.get(GET_QUICK_SEARCH_FILTERS).then((res) => {
         this.quickSearchFilters = res.data;
+      }).catch(()=>{
+        this.quickSearchFilters = quickSearchFiltersmock;
       });
     },
     goToResturantList(timingCode){

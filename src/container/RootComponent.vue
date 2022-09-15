@@ -11,15 +11,14 @@
     </b-row>
 
     <b-row>
-      <StreamBarcodeReader 
+      <!--<stream-bar-code-reader 
         @decode="onDecode"
         @loaded="onLoaded"
         v-if="showScan"
-      />
+      ></stream-bar-code-reader>-->
     </b-row>
-
     <b-row>
-      <the-image />
+      <the-image/>
     </b-row>
     <b-row>
         <h4>Quick Search</h4>
@@ -32,16 +31,16 @@
 </template>
 
 <script>
-import TheImage from "./../components/TheImage.vue";
-import TheQuickSearchFilters from "./../components/TheQuickSearchFilters";
-// import TheFoodForm from "./../components/TheFoodForm.vue";
-import {StreamBarcodeReader} from "vue-barcode-reader"
-import { ADD_FOOD, GET_FOOD, DELETE_FOOD } from "../api/endpoints";
+import TheImage from "../components/TheImage.vue";
+import TheQuickSearchFilters from "../components/TheQuickSearchFilters";
+// import {StreamBarcodeReader} from "vue-barcode-reader"
+// import { ADD_FOOD, GET_FOOD, DELETE_FOOD } from "../api/endpoints";
 
-import { mapActions, mapGetters } from "vuex";
-import { axiosInstance } from "@/api/axios";
-import callToServer from "@/mixin/callToServer";
-import DiscountedMenuItems from "../components/DiscountedMenuItems.vue";
+// import { mapActions, mapGetters } from "vuex";
+// import { mapActions } from "vuex";
+// import { axiosInstance } from "@/api/axios";
+// import callToServer from "@/mixin/callToServer";
+// import DiscountedMenuItems from "../components/DiscountedMenuItems.vue";
 import MenuItems from "../components/MenuItems.vue";
 
 export default {
@@ -49,11 +48,11 @@ export default {
   components: {
     "the-image": TheImage,
     "the-quick-search-filters": TheQuickSearchFilters,
-    StreamBarcodeReader,
-    DiscountedMenuItems,
-    MenuItems
+    // "stream-bar-code-reader":StreamBarcodeReader,
+    // DiscountedMenuItems,
+    // MenuItems
 },
-  mixins: [callToServer],
+  // mixins: [callToServer],
   data() {
     return {
       showForm: false,
@@ -63,14 +62,14 @@ export default {
     };
   },
   methods: {
-    ...mapActions({
-      captureFoood: "food/captureFoood",
-    }),
+    //...mapActions({
+      // captureFoood: "food/captureFoood",
+    // }),
     handleShowForm() {
       this.alert();
       this.$data.showForm = true;
     },
-    handleFormSubmit(payload) {
+    /*handleFormSubmit(payload) {
       axiosInstance.post(ADD_FOOD, { ...payload }).then((response) => {
         if (response.result === "success") {
           // this.captureFoood(updatedFood);
@@ -140,10 +139,10 @@ export default {
       // load a dialog with all menu items which are available at that time in qr code
       this.$data.showScan = false;
       this.$data.showMenuCard = true;
-    }
+    }*/
   },
   computed: {
-    ...mapGetters("food", ["getFood"]),
+    //...mapGetters("food", ["getFood"]),
   },
 };
 </script>

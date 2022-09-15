@@ -8,7 +8,8 @@ import {
 import config from "./config";
 
 const axiosInstance = axios.create({
-  baseURL:'https://apitestnode.azurewebsites.net/',
+  // baseURL:'https://apitestnode.azurewebsites.net/',
+  baseURL:'http://localhost:9191',
   timeout:1000,
   ...config
 });

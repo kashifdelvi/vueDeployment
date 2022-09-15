@@ -16,8 +16,8 @@ describe('My first route tes',()=>{
             global:{
                 plugins:[router]
             }
-        });*/
-        // expect(wrapper.html()).toContain('img')
+        });
+        expect(wrapper.html()).toContain('div')*/
         expect('aaaa').toContain('a')
     });
 })

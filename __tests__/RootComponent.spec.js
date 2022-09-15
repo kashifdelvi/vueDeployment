@@ -23,7 +23,6 @@ describe('Root component to hold food details page',()=>{
         });
         expect(wrapper.exists()).toBe(true);
         expect(wrapper.vm.showForm).toBe(false);
-        expect(wrapper.vm.loading).toBe(true);
         expect(wrapper.vm.error).toBe(false);
         expect(wrapper.vm.errorMessage).toEqual('');
     })
@@ -36,8 +35,6 @@ describe('Root component to hold food details page',()=>{
             }
         });
         await wrapper.vm.$nextTick();
-        expect(wrapper.vm.loading).toBe(false);
-        expect(wrapper.vm.error).toBe(false);
     })
 
     it('If api gives failed result - loading stops - error becomes true',()=>{

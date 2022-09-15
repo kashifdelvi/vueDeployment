@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import { axiosInstance } from "./../api/axios";
-import { GET_RESTURANTS } from "./../api/endpoints";
+import { axiosInstance } from "../api/axios";
+import { GET_RESTURANTS } from "../api/endpoints";
 import LocationTypeahead from "./LocationTypeahead.vue";
 
 export default {
@@ -43,7 +43,7 @@ export default {
       axiosInstance.get(GET_RESTURANTS,{
         'params':payload
       }).then((res) => {
-       this.$data.resturants = res.data.map((item)=>{
+       this.$data.resturants = res.data.resturants.map((item)=>{
         return { ...item, value: item.code, text: item.name };
        })
       });

@@ -22,7 +22,7 @@
           >
             <b-row>
               <b-col sm="3" lg="3">
-                <img width="100" height="100" :src="resturant.images?.[0]" />
+                <img width="100" height="100" :src="getImage(resturant.images?.[0])" />
               </b-col>
               <b-col sm="9" lg="9">
                 <p>
@@ -73,6 +73,15 @@ export default {
     ...mapActions({'captureActiveResturant':'food/captureActiveResturant'}),
     goToDeatails(code) {
       this.$router.push(`/resturant/${code}`);
+    },
+    getImage(imgeUrl){
+      var baseUrl = window.location.origin
+
+      if(process.env.NODE_ENV === 'development'){
+        return baseUrl+'/'+imgeUrl;
+      } else{
+        return baseUrl+'/vueDeployment/'+imgeUrl;
+      }
     },
     add(){
       // If post call success and gives an id
